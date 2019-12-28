@@ -1,0 +1,6 @@
+
+send(IP(src='ip_address',dst="ip_address")/TCP(sport='80',dport='80'),count=100)
+
+send(IP(src='ip_address',dst="ip_address")/ICMP()/"Hello world"
+
+sniff(iface="eth0",prn=lambda x : x.summary)

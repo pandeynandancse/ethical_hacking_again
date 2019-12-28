@@ -1,0 +1,41 @@
+IP obtains the address and TCP guarantees delivery of data to that address
+TCP (Transmission Control Protocol) is connection oriented, whereas UDP (User Datagram Protocol) is connection-less.
+The TCP/IP model consists of five layers: the application layer, transport layer, network layer, data link layer and physical layer.
+    Application Layer.
+    Transport Layer.
+    Internet Layer.
+    Network Access Layer.
+
+
+promiscuos mode  --- for wired connection ----- Sniffing the packets after connecting to an access point.
+monitor mode    ----- for wireless connection-----Sniffing the packets in the air without connecting (associating) with any access point
+
+options in wireshark =>> stop capturing packets
+                     =>> capture  options
+                     
+                     
+                     
+           
+           
+           
+ filtering packets--          
+                 a)  ip.addr == 192.68.1.101          =====>>> src or dst address is given ip address
+                 b)  ip.src == access_point_ip_i.e_ethernet and ip.dst == ip_address_of_any_requeste_web_site   ===> filters packets with both given ip true
+                 c) tcp     ===>> filters out all tcp packets
+                 d) ip.addr == ip_address and tcp    ====> combining two types of filtering methods
+                 e) tcp.port == 443    ===> gives https request
+                 f) arp
+                 
+                 
+                 
+                 
+ Right click on any packet and then go to follow and open tcp stream if pkt is tcp . u will see encryptedd or plain text of get / post request.
+ 
+ 
+ 
+ 
+ click on any packet and go to bottom section div and right click on site and click on 'apply as a filter' and then click selected.
+ 
+ 
+ 
+ 

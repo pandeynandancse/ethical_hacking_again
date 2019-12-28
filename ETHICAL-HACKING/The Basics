@@ -1,0 +1,5 @@
+kali linux - john the ripper
+john --format=raw-md5 /usr/share/wordlists/rockyou.txt.gz Documents/passw.txt 
+john --format=raw-md5  Documents/passw.txt 
+locate rockyou.txt
+

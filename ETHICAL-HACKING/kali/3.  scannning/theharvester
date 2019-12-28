@@ -1,0 +1,8 @@
+theharvester
+theharvester -d engigyan.com -l 500 -b google
+
+
+flags  ==>> -d = domain
+            -l = limit search results 
+            -b =  bing through search engine
+

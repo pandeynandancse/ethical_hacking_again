@@ -1,0 +1,26 @@
+1.   addding a non root user -->> adduser username
+                        then what is prompted and asked fill it .
+                        After logout enter username in place of root and password of that user in place of toor.
+     
+     
+     
+     
+ 
+2. setup openssh server-
+              
+                        sudo apt-get install openssh-server                 
+                        #Port 22   //// if u want to change port number for ssh then replace # and change number as =>> Port 214
+                        # Authentication:
+
+                                  #LoginGraceTime 2m
+                                  #PermitRootLogin prohibit-password convert to PermitRootLogin yes 
+                                  #StrictModes yes
+                                  #MaxAuthTries 6
+                                  #MaxSessions 10
+                                  
+                                  
+                                  
+                                  
+                                  
+                                  
+   Now open application puty in windows and enter ip address of working interface.

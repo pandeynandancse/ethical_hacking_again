@@ -1,0 +1,19 @@
+fingerprinting and informatio gathering tool like nmap.
+
+
+unicornscan --help
+unicorn -I -v 14.139.60.10   ////// -I for immediate and -V for verbose
+unicornscan -I -v 14.139.60.10
+unicornscan -I -v -T 14.139.60.10
+unicornscan -I -v -mT 14.139.60.10           ///// -mT for TCP
+unicornscan -I -v -mU 14.139.60.10          ///// -mU for UDP
+unicornscan -r500 -I -v -mU 14.139.60.0/24   //// -r500 means 500 packets per second
+unicornscan -r500 -I -v -mU 14.139.60.0/24:22    ////  here 22 is port number
+
+unicornscan -I -v -mTsA 14.139.60.10 
+unicornscan -I -v -mTsFPU 14.139.60.10 
+unicornscan -osdetect -mT 14.139.60.10
+
+
+
+ls -lah /usr/share/unicornscan/modules/

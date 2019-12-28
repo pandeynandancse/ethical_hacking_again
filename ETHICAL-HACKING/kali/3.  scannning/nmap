@@ -1,0 +1,27 @@
+scanme.nmap.org   ///// for legal scanning
+major ip block    ///// nirsoft website  //// ip addresses in country 
+zenmap is also a nmap of adavance graphical version.
+
+1) nslookup scanme.nmap.org >> results.txt
+2) nmap --help
+3) nmap -v -A scanme.nmap.org
+4) nmap -oG - 172.16.62.0-255 -vv > rsultsofnamp.txt
+5) nmap -oG - 172.16.62.0-255 -p 22 -vv > rsultsofnamp.txt
+6) nmap -sV 172.16.62.191
+
+
+Type of ports --
+open 
+closed
+filtered 
+
+
+
+Flags in nmap -
+a)  port  ==    -p
+b)verbose  ==   -v
+c) double verbose  == -vv
+d) graphical    ===   -oG
+e) aggresive   ====  -A
+f) fast   ===    -F
+g) for only open port ==== --open

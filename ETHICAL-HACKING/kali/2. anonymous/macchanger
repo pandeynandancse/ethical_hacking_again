@@ -1,0 +1,13 @@
+macchanger --show
+
+macchanger --help
+
+macchanger -s wlan0
+
+macchanger -a wlan0
+
+
+macchanger -p wlan0  ///// set current mac address to permanent mac address back
+
+macchanger -l  /// first three digit wth respect to vendor name
+

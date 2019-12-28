@@ -1,0 +1,11 @@
+nmap --help  ==>> go to Script Scan division
+
+nmap scripts are stored at ==>> ls -l /usr/share/nmap/scripts
+
+ls -l /usr/share/nmap/scripts | grep ssh
+
+
+nmap --script=scrit_name ip_address
+nmap --script=ssh-hostkey.nse 192.168.44.44
+
+nmap -sC ip_addresss

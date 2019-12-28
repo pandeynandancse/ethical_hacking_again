@@ -1,0 +1,150 @@
+osint    --- open source intelligence
+
+recon-ng
+marketplace install all   //// if module is not installed
+marketplace install hackertarget
+marketpalce install
+modules load hackertarget
+modules load interesting_files  /////// new version of    use interesting_files
+info                    ///////   gives information of loaded module
+
+
+
+
+workspaces -h      /////// outputs <ccreate/delete/list/slelect>
+workspaces create ws1
+workspaces delete ws1
+workspaces list
+
+
+
+
+
+
+db insert hosts 
+insert domain name
+insert ip address if want
+insert region if want
+insert country if want
+insert latitudeif want
+insert longitude if want
+
+
+
+
+
+
+db insert domains domainname
+db show domains
+show domains
+db delete domains
+insert rowid
+show domains
+
+
+
+
+db insert companies
+db show companies
+show companies
+
+
+
+
+keys add shodan_api gmsfek;fapodwq39q9((((@3     //// add api keys
+keys --help
+keys list
+
+
+
+
+
+
+
+modules load whois_pocs
+run
+show contacts                /// show contacts 
+
+
+back
+
+
+modules load bing_domains_web
+run
+show domains             /// show sub domains
+
+
+
+
+back
+
+
+
+
+modules load brute_hosts
+info
+run
+show hosts                         ///////// show sub domains
+
+
+
+
+back
+
+
+
+
+modules load interesting_files
+info
+run                             ///// show hidden files that developer does not wants to show. eg . robot.txt , sitemap.sql
+
+
+
+
+
+
+back
+
+
+
+
+
+modules load hosts.hosts/resolve
+run rowid      ////// mention row id if there is many hosts  //// if want multiple hosts to run then give range as ==>> run 1-5
+
+
+
+
+
+
+keys add ipstack_api your_api_key
+
+
+
+
+keys list
+keys add builtwith_api your_api_key
+modules load builtwith            ///////// scanning services running on website
+info
+db insert domains 
+run
+
+
+
+
+
+
+
+
+dashboard
+modules load reporting/csv
+cd root/.recon-ng/workspaces/default/results.csv
+run                          ////////////    664 records added to '/root/.recon-ng/workspaces/default/results.csv'.
+
+modules load reporting/html
+set CUSTOMER BBC
+set CREATOR HACKEREXPLOIT          /////// set is not valid option in recon-ng v5.0
+run
+
+
+

@@ -1,0 +1,4 @@
+network discovery -- discover internal ip address.
+
+netdisover -i eth0
+netdisover -i eth0 -r 192.16.22.2/24             //// ip address range

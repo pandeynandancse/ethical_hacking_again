@@ -1,0 +1,19 @@
+ tcpdump -i wlan0 -v 
+ 
+ 
+ Now adding filter :
+  tcpdump -i wlan0 -v host ip_adress_of_host 
+   tcpdump -i wlan0 -v host domain_name_of host
+    tcpdump -i wlan0 -v dst ip_adress_of_destination
+     tcpdump -i wlan0 -v src ip_adress_of_source 
+     
+      tcpdump -i wlan0 -v src ip_adress_of_source and host ip_adress_of_host  ====>> comibining with and
+       tcpdump -i wlan0 -v net 192.16.168.01/24            ====>> entire network
+       
+        tcpdump -i wlan0 -v tcp and net 192.16.168.01/24  
+           tcpdump -i wlan0 -v port 80  ==>> analyzing pkt on specific port 
+           tcpdump -i wlan0 -v src port 443 and dst ip_adress_of_dst  ==>.combined port and dst ip
+           
+           tcpdump -i wlan0 -v 'src port 443 and dst ip_adress_of_dst' ====>.> using quotation mark
+           tcpdump -w path_to_write_output_to_file -i eth0 -v 'tcp and dst 192.15.168.01'
+           

@@ -1,0 +1,54 @@
+Footprinting basically means getting more and more knowledege about target.
+
+
+Active : interaction
+Passive : publicly available
+
+
+
+
+
+Benfits :
+reduce focus area
+idedntify vulnerability
+network map
+know security posture
+
+
+
+
+
+
+How ?
+google hacking    ----- filetype , inurl,insite,intitle,
+search engines
+shodan
+whois
+social media
+competitive intelligence
+job boards   ---- fill details for job
+alerts    --  alert when webpage is updated
+mirror website 
+email footprintin g
+
+
+
+
+
+nikto -e 1 -h www.nitkkr.ac.in
+
+
+theharvester -d microsoft.com -l 50 -b google -h myresults.html
+
+
+shodan.io --> search for cisco router in some country and its city.    --->  find username and password that is default    --->summary it finds vulnerable devices.
+
+
+google hacking database    --- inurl, intitle , site: , filetype
+
+
+
+
+
+
+

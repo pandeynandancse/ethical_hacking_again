@@ -1,0 +1,46 @@
+DNS enumeration is DNS interrogtion.
+Gathering information about mail server with priority and ip  address etc things.
+
+
+1) host domain_name            //// gives ip address of domain and its mail address with priority
+
+2) host -t ns domain_name      /// ns gives name server   /// name of dns server
+
+3) host -t mx domain_name      /// mx gives mail server   /// name of mail server
+
+
+4) nslookup domain_name
+
+5) nslookup     /// press enter without argument
+   set type=ns
+   domain_name
+   exit
+   
+   
+   
+ 6) dig nitkkr.ac.in AAAA   //// gives ipv6 address
+ 
+ 7) dig nitkkr.ac.in -t mx
+ 
+ 8) dig nitkkr.ac.in -t ns
+ 
+ 9) dig engigyan.com CNAME
+
+10) dig nitkkr.ac.in -t mx +short
+ 
+ 11) dig engigyan.com CNAME +short
+
+
+
+
+
+12) host -t ns zonetransfer.me
+    host -l zonetransfer.me nsztm1.digi.ninja.
+    dig zonetransfer.me -t ns
+    dig axfr zonetransfer.me @nsztm1.digi.ninja.
+    
+    
+    
+    
+    
+ 13)  dnsrecon -d zonetransfer.me -t axfr   ====>>>> automates whole above process..

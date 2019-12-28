@@ -1,0 +1,13 @@
+nano /etc/proxychains.conf
+
+# Proxy DNS requests - no leak for DNS data  ==>  uncomment it via removing #
+
+socks5  127.0.0.1 9050    ////// ctrl-o + enter + ctrl-x  ===>> saved file 
+
+service tor start
+proxychains firefox www.duckduckgo.com
+check for dns leaks  in duckduckgo search bar
+click on link  and then go to standard test button
+
+
+

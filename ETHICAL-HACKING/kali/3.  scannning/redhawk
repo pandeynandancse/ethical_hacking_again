@@ -1,0 +1,8 @@
+git clone https://github.com/Tuhinshubhra/RED_HAWK.git
+cd RED_HAWK
+apt-get install php-curl
+apt-get install php-xml
+php rhawk.php
+
+
+

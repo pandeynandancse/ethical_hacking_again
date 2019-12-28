@@ -1,0 +1,15 @@
+
+search forfollowing --
+
+port:22
+webcams
+os:windows xp
+find ip address and port number and then search with ip_address/port_number
+
+
+
+shodan commandline
+shodan --help
+ sudo pip3 install shodan
+shodan init api_Key
+shodan host ip_address

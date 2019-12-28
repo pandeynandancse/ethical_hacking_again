@@ -1,0 +1,252 @@
+                                  Scanning Methodology -
+check for live systems
+check for open ports
+san beyond ids
+perform banner grabbing
+scan for vulnerabilities
+draw network diagrams
+prepare proxies
+
+
+
+
+
+Note : packet fragmentation can help against target  ------ to avoid ids use pkt. fragmentation
+
+
+
+
+
+
+
+
+3way handshake -
+syn100
+syn200 + ack101
+ack201
+
+
+
+TCP header flags - 
+syn
+ack
+rst   ----->> close communicaation in both direction
+finish   --- fin  ---->> ordered close communication 
+push   -- psh   --->>forces delivery of data without concern for any buffering
+urgent -- urg  --->>> indiactes the data is being sent out of band
+
+
+
+
+
+icmp msg type3 :
+0  -- dest network unreachable
+1  --- dest host unreach
+6  -- n/w unknown
+7  -- host unknown
+9   --- n/w administratively prohibitted
+10   --  host adm proh
+13  --communication admin prohib
+
+
+
+
+
+
+port scanninng -
+tools -nmap
+full open -->> aka tcp connect and full connect .it runs 3 way hanashake on all ports. Easy to detect. 
+half open  (stealth or syn )  -->> no completion of thrree way handshake 
+inverse tcp  -->.uses fin , psh, urg flags.No response means port is open
+xmas  -->> 
+ack    --->> ack packet sent and header is reviewed for rst packet to see if ttl is less than 64 that could us that port is open.
+idle  -- spoofed ip addressss
+
+
+
+
+
+
+banner grabbing - 
+telnet -- runs on port 23 but run on http port i.e.80   -->  $ telnet ip_address 80
+
+
+
+source routing
+
+
+
+
+
+
+Enumeration -
+discovery of hosts or devices
+
+
+
+
+
+
+
+vulnerability tools- 
+openvas
+nessus
+1) cvss
+2) cve
+3) vulnerability management life cycle
+
+
+
+
+
+
+
+
+
+ifconfig-
+eth0
+loopback
+wlp3s0
+
+
+
+
+
+
+nmap -sn 192.168.0.1/24       ----->>>  -sn is used for disabling port scanning (just send pings)
+
+
+
+hping3 -1 192.18.0.1    ---->>> -1 is signal for ping scan
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Modeule : performing a check for open ports(using nmap and hping3)----
+
+
+
+
+
+
+
+
+                                      test under both case  when firewall is on and off 
+                                  
+hping3 -8 0-10 -S 192.168.0.1    ----->>> hping syn scan -->>> -8 -> enable scan mode , 0-10 range of ports , -S -> set syn flag   --> notie did u got any ack flag?????
+hping3 -c 1 -V -p 80 -s 5555 -A 192.168.0.1   -->> hiping ack scan -->> -c =>count packets , -V => verbose , -s 5555 => base port from where packets are sent . 
+                                                /////////// ====>>> ack scan + firewall on scan ---->>>if firewall is on then 100% loss will occur.
+hping3 -c 1 -V -p 80 -s 5555 -M 0 -UPF 192.168.0.1    ---->>> xmas scan ---->>> -M 0 => sets tcp sequence number ,,,, ---> -upf =>sets urg,fin,psh  flag for xmas scanning.
+
+
+
+
+
+nmap full connect scan  --> nmap -sS ip_address ---->> TCP SYN port scan
+nmap half connect scan  --> nmap -sT ip_address --->> TCP connect port scan
+nmap -sX ip_address  --> nmap  xmas scan -->> works against linux only, not on  windows.  --->> fin,urg,psh is set but not syn . -->> if rst received then port is  closed.
+nmap -sX --reason ip_address  ---->> also gives reason why port is open or closed.
+nmap -sA -p 80 ip_address   --->>> -sA -p 80 -->> aknowldegement switch scan on port 80 i.e.http port  -->> it doesnot tell open or closed port. it tells filtered or unfiltered port. tells more info between me and my target . 
+                                    /////////// ====>>>>> ack scan + firewall on scan ----->>>>>  if on target machine firewall is on then it  will show filtered.
+                                    
+                            
+                            
+                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+OS Fingerprinting ---
+nmap -sS -O ip_address_1 ip_address_2 --->> -O ==>> operating system detection
+
+p0f -p -i eth0  --->> -p =>> put listening interface in promiscious mode ,,, -i =>> listen on specified interace
+
+
+
+
+
+
+
+
+
+
+
+
+
+mapping networks-
+1) nmap -sn 192.168.0.1/24
+2) install manageengine opmanager app.(windowss)  on port localhost ://8443
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+banner grabbing---(finding that which version of server is used by target)
+1) telnet www.nitkkr.ac.in 80
+GET /dvwa/ HTTP/1.1
+Host: 14.139.60.10
+
+get- to obtain data from web serer
+http - protocol to connect with
+Host : ipaddress of remote host
+dvwa - damn vulnerable web applicaiton
+
+2) netcat
+nc www.nitkkr.ac.in 80
+GET /dvwa/ HTTP/1.1
+Host: 14.139.60.10
+
+3) nmap -sS -p 80 -A 192.168.0.1  /// -A=>aggressive mode, 
+
+
+
+
+
+
+
+
+Enumeration tools:
+1) nslookup
+> server 14.139.60.10 
+enter
+> set type=any
+> ls -d nitkkr.ac.in 
+
+
+2) dig axfr practicelabs.com 192.168.0.1  ==>>> axfr stands for providing  complete listing of DNS record.target we using is not dns zone transfer vulnerable so no output will reflect////dig is used for dns zone transfer 
+
+3)Psinfo.exe\\192.168.0.1 -h -d                           // works in window's cmd===> -h => displays listed installed hotfixes ,, -d => displays informtion related to disk volume 
+
+
+4)finger -s root                                          ////// works in linux. ==>> shows list of users logged in system

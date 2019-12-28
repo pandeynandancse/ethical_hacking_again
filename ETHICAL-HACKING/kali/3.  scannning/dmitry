@@ -1,0 +1,14 @@
+Passive information gathering .
+
+
+dmitry --help
+
+dmitry -i nitkkr.ac.in    /// ip lookup
+dmitry -w nitkkr.ac.in    ///// whois
+dmitry -n nitkkr.ac.in       //// netcraft
+dmitry -e nitkkr.ac.in         ///// for email but for email havesting use the harvester
+
+dmitry -i nitkkr.ac.in -o result.txt        ////  output is stored in result .txt
+
+dmitry -wnpe nitkkr.ac.in -o result.txt    //// p for port , e for email , w for whois  ////// multiple flags in one way
+
